@@ -1,0 +1,10 @@
+<div>
+  <h1>File Directory</h1>
+  <%= form_tag '/file/read' do%>
+    <%= label_tag :Insert_the_File: %><br>
+    <br>
+    <%= file_field_tag :filename, class: "form-control" %><br>
+    <br>
+    <%= submit_tag "Open"%>
+  <% end %>
+</div>
