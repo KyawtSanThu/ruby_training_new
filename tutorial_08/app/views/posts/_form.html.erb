@@ -1,0 +1,21 @@
+<%= form_for(post) do |f| %>
+  <div class="actions">
+    <%= f.label :title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :title %><br>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description %><br>
+    <br>
+    <%= f.label :public_flag %>
+    <%= f.label :public_flag, "Yes", :value => "Yes" %>
+    <%= f.radio_button :public_flag, true, :checked => true %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.label :public_flag, "No", :value => "No" %>
+    <%= f.radio_button :public_flag, false, :checked => false %><br>
+    <br>
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %><br>
+    <br>
+    <br>
+    <%= f.submit %>
+  </div>
+<% end %>
