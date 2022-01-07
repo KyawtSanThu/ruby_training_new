@@ -1,0 +1,12 @@
+<div>
+  <%= form_tag "/path/read", multipart: true do %>
+    <%= label_tag :image_Upload %><br>
+    <br>
+    <%= file_field_tag :image, class: "form-control" %><br>
+    <br>
+    <%= label_tag :Folder %>
+    <%= text_field_tag :folder %><br>
+    <br>
+    <%= submit_tag :save %>
+  <% end %>
+</div>
