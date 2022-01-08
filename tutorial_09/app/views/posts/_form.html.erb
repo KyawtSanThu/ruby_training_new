@@ -1,0 +1,17 @@
+<%= form_for :post, url: "/users/#{post.user_id}/posts/#{post.id}" do |f| %>
+  <div class="actions">
+    <%= f.label :title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %><br><br>
+
+    <%= f.label :public_flag %>
+    <%= f.label :public_flag, "Yes", :value => "Yes" %>
+    <%= f.radio_button :public_flag, true, :checked => true %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.label :public_flag, "No", :value => "No" %>
+    <%= f.radio_button :public_flag, false, :checked => false %><br><br>
+
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<%= form_for :user, url: user_path, method: "patch" do |f| %>
+  <div class="actions">
+    <%= f.label :name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %><br><br>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %><br><br>
+
+    <%= f.label :super_user_flag %>
+    <%= f.label :super_user_flag, "Yes", :value => "Yes" %>
+    <%= f.radio_button :super_user_flag, true%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.label :super_user_flag, "No", :value => "No" %>
+    <%= f.radio_button :super_user_flag, false, :checked => true %><br><br>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone %><br><br><br>
+
+    <%= f.label :address %>
+    <%= f.text_area :address %><br><br>
+
+    <%= f.label :birthday %>
+    <%= f.text_field :birthday %><br><br>
+
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h4>name --> <%= @user.name %></h4>
+<h4>email --> <%= @user.email %></h4>
+<h4>password --> <%= @user.password %></h4>
+<h4>super_user_flag --> <%= @user.super_user_flag %></h4>
+<h4>phone --> <%= @user.phone %></h4>
+<h4>address --> <%= @user.address %></h4>
+<h4>birthday --> <%= @user.birthday %></h4>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', root_path %>
+
+<h2>Posts</h2>
+<% @user.posts.each do |post| %>
+  <p>
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= post.description %>
+  </p>
+  <p>
+    <strong>Public_Flag:</strong>
+    <%= post.public_flag %>
+  </p>
+<% end %>
+<h2>Add a post:</h2>
+<%= form_for ([@user, @user.posts.build]) do |f| %>
+  <p>
+    <%= f.label :title, "Title:" %> &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
+    <%= f.text_field :title, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :description, "Description:" %>
+    <%= f.text_area :description, class: "form-control" %>
+  </p>
+  <p>
+  <%= f.label :public_flag %>  
+    <%= f.label :public_flag, "Yes", :value => "Yes" %>
+    <%= f.radio_button :public_flag, true, :checked => true %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.label :public_flag, "No", :value => "No" %>
+    <%= f.radio_button :public_flag, false, :checked => false %><br><br>
+  </p>
+  <p>
+    <%= f.label :user_id, "User ID:" %> &nbsp; &nbsp;  &nbsp;
+    <%= f.text_field :user_id, class: "form-control" %>
+  </p>
+  <%= f.submit %>
+  <br>
+  <%= link_to "Back", root_path %>
+<% end %>
