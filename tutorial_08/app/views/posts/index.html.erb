@@ -12,10 +12,10 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= posts.title %></td>
-        <td><%= posts.description %></td>
-        <td><%= posts.public_flag %></td>
-        <td><%= posts.user_name %></td>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%= post.public_flag %></td>
+        <td><%= post.user_name %></td>
         <td>
           <%= link_to 'Show', post %>
           <%= link_to 'Edit', edit_post_path(post) %>

@@ -1,0 +1,486 @@
+Started GET "/" for ::1 at 2022-01-07 07:56:21 +0630
+  [1m[36mActiveRecord::SchemaMigration Load (109.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (19.6ms)
+Completed 200 OK in 438ms (Views: 117.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2022-01-07 07:56:57 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (61.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (406.6ms)
+Completed 500 Internal Server Error in 752ms (ActiveRecord: 171.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts' for #<#<Class:0x000002403d40c5c0>:0x000002403d156150>
+Did you mean?  post
+               @posts):
+    12:   <tbody>
+    13:     <% @posts.each do |post| %>
+    14:       <tr>
+    15:         <td><%= posts.title %></td>
+    16:         <td><%= posts.description %></td>
+    17:         <td><%= posts.public_flag %></td>
+    18:         <td><%= posts.user_name %></td>
+  
+app/views/posts/index.html.erb:15:in `block in _app_views_posts_index_html_erb__784664577_1237463893660'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237463893660'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (477.1ms)
+Started GET "/posts" for ::1 at 2022-01-07 07:58:37 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (148.6ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x00000240426791a0>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237490148000'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237490148000'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.7ms)
+Started GET "/posts" for ::1 at 2022-01-07 07:59:04 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<Post:0x00000240411cff60>):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.username %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237496740180'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237496740180'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.7ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:00:11 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Post::ActiveRecord_Relation:0x000002403e217098>):
+    12:   <tbody>
+    13:     <% @posts.each do |post| %>
+    14:       <tr>
+    15:         <td><%= @posts.title %></td>
+    16:         <td><%= @posts.description %></td>
+    17:         <td><%= @posts.public_flag %></td>
+    18:         <td><%= @posts.user_name %></td>
+  
+app/views/posts/index.html.erb:15:in `block in _app_views_posts_index_html_erb__784664577_1237471812180'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237471812180'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.3ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:01:16 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    12:   <tbody>
+    13:     <% @posts.each do |post| %>
+    14:       <tr>
+    15:         <td><%= @post.title %></td>
+    16:         <td><%= @post.description %></td>
+    17:         <td><%= @posts.public_flag %></td>
+    18:         <td><%= @posts.user_name %></td>
+  
+app/views/posts/index.html.erb:15:in `block in _app_views_posts_index_html_erb__784664577_1237496855520'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237496855520'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.4ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:01:39 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for nil:NilClass):
+    13:     <% @posts.each do |post| %>
+    14:       <tr>
+    15:         <td><%= post.title %></td>
+    16:         <td><%= @post.description %></td>
+    17:         <td><%= @posts.public_flag %></td>
+    18:         <td><%= @posts.user_name %></td>
+    19:         <td>
+  
+app/views/posts/index.html.erb:16:in `block in _app_views_posts_index_html_erb__784664577_1237504816020'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237504816020'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.2ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:01:57 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `public_flag' for #<Post::ActiveRecord_Relation:0x00000240411bfdb8>
+Did you mean?  public_send):
+    14:       <tr>
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= @posts.public_flag %></td>
+    18:         <td><%= @posts.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+  
+app/views/posts/index.html.erb:17:in `block in _app_views_posts_index_html_erb__784664577_1237496755180'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237496755180'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.1ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:02:09 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (143.8ms)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts' for #<#<Class:0x000002403d40c5c0>:0x000002403f160748>
+Did you mean?  post
+               @posts):
+    14:       <tr>
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= posts.public_flag %></td>
+    18:         <td><%= posts.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+  
+app/views/posts/index.html.erb:17:in `block in _app_views_posts_index_html_erb__784664577_1237479787480'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237479787480'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.1ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:02:26 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x00000240412236d8>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237500155020'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237500155020'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.4ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:03:30 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x000002403e2ef0d8>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237468971260'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237468971260'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.0ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:03:32 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x00000240416ab9d0>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237500704200'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237500704200'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.4ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:03:32 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x00000240418b32c8>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237496944920'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237496944920'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.9ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:03:32 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x000002403f0a3288>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237479321360'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237479321360'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.2ms)
+Started GET "/posts" for ::1 at 2022-01-07 08:03:33 +0630
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  Rendered posts/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_name' for #<Post:0x0000024041e99728>
+Did you mean?  user_id_change):
+    15:         <td><%= post.title %></td>
+    16:         <td><%= post.description %></td>
+    17:         <td><%= post.public_flag %></td>
+    18:         <td><%= post.user_name %></td>
+    19:         <td>
+    20:           <%= link_to 'Show', post %>
+    21:           <%= link_to 'Edit', edit_post_path(post) %>
+  
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__784664577_1237503427780'
+app/views/posts/index.html.erb:13:in `_app_views_posts_index_html_erb__784664577_1237503427780'
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.2ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (160.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Drop (20220108131455)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from change at D:/ruby_training_new/tutorials/tutorial_08/db/migrate/20220108131455_drop.rb:3)
+DEPRECATION WARNING: Passing arguments to #tables is deprecated without replacement. (called from change at D:/ruby_training_new/tutorials/tutorial_08/db/migrate/20220108131455_drop.rb:3)
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Drop (20220108131455)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from change at D:/ruby_training_new/tutorials/tutorial_08/db/migrate/20220108131455_drop.rb:3)
+DEPRECATION WARNING: Passing arguments to #tables is deprecated without replacement. (called from change at D:/ruby_training_new/tutorials/tutorial_08/db/migrate/20220108131455_drop.rb:3)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Drop (20220108131455)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from change at D:/ruby_training_new/tutorials/tutorial_08/db/migrate/20220108131455_drop.rb:3)
+DEPRECATION WARNING: Passing arguments to #tables is deprecated without replacement. (called from change at D:/ruby_training_new/tutorials/tutorial_08/db/migrate/20220108131455_drop.rb:3)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Create (20220108131619)
+  [1m[35m (1026.3ms)[0m  [1m[35mCREATE TABLE `posts` (`id` int AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `public_flag` tinyint(1), `created_at` datetime, `updated_at` datetime, `user_name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (371.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220108131619')[0m
+  [1m[35m (98.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Drop (20220108131909)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (32.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220108131909')[0m
+  [1m[35m (149.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (222.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (23.1ms)[0m  [1m[35mSHOW CREATE TABLE `posts`[0m
+  [1m[35m (43.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'posts'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Drop (20220108132035)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Drop (20220108132035)
+  [1m[35m (904.1ms)[0m  [1m[35mDROP TABLE `posts`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220108132035')[0m
+  [1m[35m (90.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('6111075992383579770', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreatePost (20220108132206)
+  [1m[35m (1149.1ms)[0m  [1m[35mCREATE TABLE `posts` (`id` int AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `public_flag` tinyint(1), `created_at` datetime, `updated_at` datetime, `user_name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (21.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220108132206')[0m
+  [1m[35m (80.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('6111075992383579770')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (5.1ms)[0m  [1m[35mSHOW CREATE TABLE `posts`[0m
+  [1m[35m (38.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'posts'[0m
