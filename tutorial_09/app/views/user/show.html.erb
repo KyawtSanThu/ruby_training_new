@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <h4>name --> <%= @user.name %></h4>
 <h4>email --> <%= @user.email %></h4>
 <h4>password --> <%= @user.password %></h4>
@@ -7,10 +6,8 @@
 <h4>phone --> <%= @user.phone %></h4>
 <h4>address --> <%= @user.address %></h4>
 <h4>birthday --> <%= @user.birthday %></h4>
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', root_path %>
-
 <h2>Posts</h2>
 <% @user.posts.each do |post| %>
   <p>
@@ -25,9 +22,11 @@
     <strong>Public_Flag:</strong>
     <%= post.public_flag %>
   </p>
+  <%= link_to "Edit", edit_post_path %>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 <h2>Add a post:</h2>
-<%= form_for ([@user, @user.posts.build]) do |f| %>
+<%= form_for (@user.posts.build) do |f| %>
   <p>
     <%= f.label :title, "Title:" %> &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
     <%= f.text_field :title, class: "form-control" %>
@@ -37,11 +36,12 @@
     <%= f.text_area :description, class: "form-control" %>
   </p>
   <p>
-  <%= f.label :public_flag %>  
+    <%= f.label :public_flag %>
     <%= f.label :public_flag, "Yes", :value => "Yes" %>
     <%= f.radio_button :public_flag, true, :checked => true %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <%= f.label :public_flag, "No", :value => "No" %>
-    <%= f.radio_button :public_flag, false, :checked => false %><br><br>
+    <%= f.radio_button :public_flag, false, :checked => false %><br>
+    <br>
   </p>
   <p>
     <%= f.label :user_id, "User ID:" %> &nbsp; &nbsp;  &nbsp;

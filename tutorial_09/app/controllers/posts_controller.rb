@@ -22,12 +22,11 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @user = User.find(params[:user_id])
-    @post = Post.new(post_params)
-
+    @user = User.find_by(params[:user_id])
+    @post = @user.posts.create(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
+        format.html { redirect_to user_url(@user), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -54,7 +53,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+      format.html { redirect_to user_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -68,6 +67,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.fetch(:post, {}).permit(:title, :description, :public_flag, :user_name)
+    params.fetch(:post, {}).permit(:title, :description, :public_flag, :user_id)
   end
 end
