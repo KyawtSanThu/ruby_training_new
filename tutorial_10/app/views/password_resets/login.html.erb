@@ -1,0 +1,18 @@
+<div class="form">
+  <h1>Login</h1>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <div>
+      <%= f.email_field :email, :placeholder => "Email" %>
+    </div>
+    <br>
+    <div>
+      <%= f.password_field :password, :placeholder => "Password" %>
+    </div>
+    <div class="submit">
+      <%= f.submit "Log in", class: "btn-submit" %>
+    </div>
+    <div class="link">
+      <%= link_to "Fogot your password?", password_reset_path %>
+    </div>
+  <% end %>
+</div>
